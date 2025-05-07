@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakingo | Premium Artisanal Bakery in Andheri</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bakingo - Mumbai's premier artisanal bakery in Andheri. Handcrafted cakes, pastries, and desserts made with premium ingredients. Order online or visit our store.">
+    <meta name="keywords" content="bakery Andheri, cake delivery Mumbai, artisanal bakery, custom cakes, wedding cakes, Bakingo">
+    <meta name="author" content="Atharav Jadhav">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #e8b4b8; /* Soft pink */
+            --secondary: #d4af37; /* Gold */
+            --dark: #2d2d2d; /* Dark gray */
+            --light: #f9f6f0; /* Cream */
+            --accent: #a26769; /* Muted red */
+            --text: #333333;
+            --text-light: #777777;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark) !important;
+            margin: 0 12px;
+            position: relative;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1608190003443-86ab6a1e9c1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #c9a227;
+            border-color: #c9a227;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background-color: white;
+            color: var(--dark);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 70px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title .divider::before,
+        .section-title .divider::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background-color: var(--secondary);
+            top: 0;
+        }
+
+        .section-title .divider::before {
+            left: -30px;
+        }
+
+        .section-title .divider::after {
+            right: -30px;
+        }
+
+        /* About Section */
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Menu Section */
+        .menu-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-card-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-card-body {
+            padding: 25px;
+        }
+
+        .menu-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .menu-card-price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .menu-card-price::before {
+            content: '₹';
+        }
+
+        .menu-card-description {
+            color: var(--text-light);
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .menu-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-container:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-container:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-container:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            padding: 50px 0;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .testimonial-author-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .testimonial-author-title {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-info-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .contact-info-text {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-control {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(232, 180, 184, 0.25);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        /* Map */
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            max-height: 60px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section {
+                min-height: 600px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="https://via.placeholder.com/150x50?text=Bakingo" alt="Bakingo Logo" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Artisanal Bakery in Andheri</h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Handcrafted with passion since 2020. Premium ingredients, traditional techniques, modern flavors.</p>
+                        <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                            <a href="#menu" class="btn btn-primary me-2">View Menu</a>
+                            <a href="#contact" class="btn btn-outline-light">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1608190003443-86ab6a1e9c1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About Bakingo" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-title text-start">
+                        <h2>Our Story</h2>
+                        <div class="divider"></div>
+                    </div>
+                    <p>Founded in 2020 by master baker Atharav Jadhav, Bakingo has quickly become Andheri's premier destination for artisanal baked goods. Our philosophy is simple: use the finest ingredients, traditional techniques, and a dash of innovation to create unforgettable flavors.</p>
+                    <p>Every item in our bakery is handcrafted with meticulous attention to detail. We source our ingredients locally whenever possible, ensuring freshness and supporting our community.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-award fa-2x text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Premium Quality</h5>
+                                    <p class="mb-0 text-muted">Finest ingredients</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-bread-slice fa-2x text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Handcrafted</h5>
+                                    <p class="mb-0 text-muted">Made with love</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-leaf fa-2x text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Fresh Daily</h5>
+                                    <p class="mb-0 text-muted">Never frozen</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-heart fa-2x text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Custom Orders</h5>
+                                    <p class="mb-0 text-muted">Tailored to you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section bg-light" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <div class="divider"></div>
+                <p class="lead">Discover our signature creations</p>
+            </div>
+            
+            <ul class="nav nav-pills mb-5 justify-content-center" id="menu-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="cakes-tab" data-bs-toggle="pill" data-bs-target="#cakes" type="button" role="tab">Cakes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pastries-tab" data-bs-toggle="pill" data-bs-target="#pastries" type="button" role="tab">Pastries</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab">Desserts</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="breads-tab" data-bs-toggle="pill" data-bs-target="#breads" type="button" role="tab">Breads</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="menu-tabContent">
+                <div class="tab-pane fade show active" id="cakes" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80" alt="Chocolate Fudge Cake" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">Chocolate Fudge Cake</h3>
+                                    <p class="menu-card-description">Three layers of rich chocolate cake with fudge filling and chocolate buttercream frosting.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">1200</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1558317685-9e7ee304941a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Red Velvet Cake" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">Red Velvet Cake</h3>
+                                    <p class="menu-card-description">Classic red velvet with cream cheese frosting and delicate crumb texture.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">1500</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Custom Cake" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">Custom Celebration Cake</h3>
+                                    <p class="menu-card-description">Personalized design for birthdays, anniversaries, or special occasions.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">2000+</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="pastries" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Croissant" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">French Croissant</h3>
+                                    <p class="menu-card-description">Buttery, flaky traditional French croissant made with premium butter.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">150</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Almond Croissant" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">Almond Croissant</h3>
+                                    <p class="menu-card-description">Filled with almond cream and topped with sliced almonds.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">200</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="menu-card">
+                                <img src="https://images.unsplash.com/photo-1540337706094-da10342c93d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fruit Tart" class="menu-card-img">
+                                <div class="menu-card-body">
+                                    <h3 class="menu-card-title">Seasonal Fruit Tart</h3>
+                                    <p class="menu-card-description">Buttery crust with pastry cream and fresh seasonal fruits.</p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">250</span>
+                                        <a href="#contact" class="btn btn-sm btn-primary">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional menu tabs would go here -->
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary px-5">Full Menu & Ordering</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Creations</h2>
+                <div class="divider"></div>
+                <p class="lead">A visual feast of our artisanal craftsmanship</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80" alt="Cake 1" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Chocolate Fudge</h5>
+                                <p>Signature Cake</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1558317685-9e7ee304941a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Cake 2" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Red Velvet</h5>
+                                <p>Classic Favorite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Cake 3" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Custom Design</h5>
+                                <p>Wedding Cake</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Pastry 1" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>French Pastries</h5>
+                                <p>Morning Delights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pastry 2" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Almond Croissant</h5>
+                                <p>Customer Favorite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1540337706094-da10342c93d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pastry 3" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Fruit Tart</h5>
+                                <p>Seasonal Selection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Bread 1" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Artisan Bread</h5>
+                                <p>Freshly Baked</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-container">
+                        <img src="https://images.unsplash.com/photo-1608190003443-86ab6a1e9c1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Bakery" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h5>Our Bakery</h5>
+                                <p>Andheri West</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section bg-light" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <div class="divider"></div>
+                <p class="lead">Hear from our satisfied customers</p>
+            </div>
+            
+            <div class="testimonial-slider swiper-container" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">The best bakery in Andheri! The chocolate fudge cake was moist and rich, exactly as described. Will definitely order again for all our family celebrations.</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya M." class="testimonial-author-img">
+                                <div>
+                                    <h5 class="testimonial-author-name">Priya M.</h5>
+                                    <p class="testimonial-author-title">Regular Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">Bakingo made our wedding cake and it was absolutely stunning. Not only beautiful but delicious too. All our guests raved about it! Atharav understood our vision perfectly.</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Raj & Neha" class="testimonial-author-img">
+                                <div>
+                                    <h5 class="testimonial-author-name">Raj & Neha</h5>
+                                    <p class="testimonial-author-title">Wedding Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">I stop by every weekend for their almond croissants. They're as good as any I've had in Paris. The quality and consistency are remarkable. Now my whole office orders from them!</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit S." class="testimonial-author-img">
+                                <div>
+                                    <h5 class="testimonial-author-name">Amit S.</h5>
+                                    <p class="testimonial-author-title">Food Enthusiast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">As a cafe owner, I've been sourcing pastries from Bakingo for over a year. Their products elevate our menu and our customers can taste the difference. Highly recommend for bulk orders!</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Neha P." class="testimonial-author-img">
+                                <div>
+                                    <h5 class="testimonial-author-name">Neha P.</h5>
+                                    <p class="testimonial-author-title">Cafe Owner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <div class="divider"></div>
+                <p class="lead">We'd love to hear from you</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="contact-info-box">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="contact-info-title">Our Location</h3>
+                                <p class="contact-info-text">Shop No. 5, Sunshine Plaza, Andheri West, Mumbai - 400058</p>
+                                <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-sm btn-outline-primary mt-2">View on Map</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-info-box">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <h3 class="contact-info-title">Call Us</h3>
+                                <p class="contact-info-text">+91 98340 09750<br>Atharav Jadhav (Owner)</p>
+                                <a href="tel:+919834009750" class="btn btn-sm btn-outline-primary mt-2">Call Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-info-box">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3 class="contact-info-title">Email Us</h3>
+                                <p class="contact-info-text">Atharavajadhav721@gmail.com<br>orders@bakingo.in</p>
+                                <a href="mailto:Atharavajadhav721@gmail.com" class="btn btn-sm btn-outline-primary mt-2">Email Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-info-box">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3 class="contact-info-title">Opening Hours</h3>
+                                <p class="contact-info-text">Monday-Friday: 8am-8pm<br>Saturday-Sunday: 9am-6pm</p>
+                                <a href="#contact" class="btn btn-sm btn-outline-primary mt-2">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container" data-aos="fade-up" data-aos-delay="400">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.7811611676656!2d72.83921531538478!3d19.16105375372547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a115555555%3A0x7fa7740275f81939!2sAndheri%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" placeholder="Your Message" rows="6" required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-5">
+                            <h4 class="mb-3">Follow Us</h4>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="https://via.placeholder.com/150x50?text=Bakingo" alt="Bakingo" class="footer-logo">
+                    <p class="footer-about">Bakingo is Andheri's premier artisanal bakery, crafting exquisite cakes, pastries and breads since 2020. We combine traditional techniques with innovative flavors to create unforgettable baked goods.</p>
+                    <div class="footer-social mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <h4 class="footer-title">Our Menu</h4>
+                    <ul class="footer-links">
+                        <li><a href="#menu">Signature Cakes</a></li>
+                        <li><a href="#menu">French Pastries</a></li>
+                        <li><a href="#menu">Artisan Breads</a></li>
+                        <li><a href="#menu">Seasonal Specials</a></li>
+                        <li><a href="#menu">Custom Orders</a></li>
+                        <li><a href="#menu">Wedding Cakes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Shop No. 5, Sunshine Plaza, Andheri West, Mumbai - 400058</li>
+                        <li><i class="fas fa-phone-alt me-2"></i> +91 98340 09750</li>
+                        <li><i class="fas fa-envelope me-2"></i> Atharavajadhav721@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8am-8pm, Sat-Sun: 9am-6pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p class="mb-0">&copy; 2023 Bakingo. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Atharav Jadhav</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Script -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Testimonial slider
+        const testimonialSlider = new Swiper('.testimonial-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            }
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would normally send the form data to a server
+                // For this demo, we'll just show an alert
+                alert('Thank you for your message! We will respond within 24 hours.');
+                
+                // Reset the form
+                this.reset();
+            });
+        }
+        
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
